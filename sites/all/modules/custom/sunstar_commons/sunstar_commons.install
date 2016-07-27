@@ -1,0 +1,16 @@
+<?php
+// $Id: sunstar_commons.module,v 1.0 2015/04/17 11:47:37 mmo Exp $
+
+/**
+ * Implementation of hook_install().
+ */
+function sunstar_commons_install() {
+	// no installation activity
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function sunstar_commons_uninstall() {
+	// no uninstall activity
+}

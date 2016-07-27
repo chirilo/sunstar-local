@@ -1,0 +1,6 @@
+name = BSP Key Rates
+description = Retrieves exchange rate bulletin from BSP's website.
+core = 7.x
+package = Sun.Star
+
+version = "1.1"

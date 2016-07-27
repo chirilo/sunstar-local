@@ -1,0 +1,70 @@
+<?php
+// $Id
+
+/**
+ * Implementation of hook_install().
+ */
+function lotto_install() {
+  // Create tables.
+  drupal_uninstall_schema('lotto');
+  drupal_install_schema('lotto');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function lotto_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('lotto');
+  variable_del('lotto_search_results');
+  variable_del('lotto_checked');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function lotto_schema() {
+  $schema['lotto'] = array(
+    'description' => 'Stores lotto results.',
+    'fields' => array(
+      'lottogame'  => array(
+        'type' => 'varchar',
+        'length' => 25,
+        'not null' => TRUE,
+        'description' => 'Lotto game',
+      ),
+      'drawdate' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Draw date.',
+      ),
+      'combination' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Combination',
+      ),
+      'jackpot' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'jackpot.',
+      ),      
+      'winners' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'No of winners.',
+      ),
+
+    ),
+    'primary key' => array('lottogame', 'drawdate'),
+  );
+
+  return $schema;
+}

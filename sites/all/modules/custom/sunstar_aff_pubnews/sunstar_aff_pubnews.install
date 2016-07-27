@@ -1,0 +1,16 @@
+<?php
+// $Id: sunstar_aff_pubnews.info,v 2.0 2015/04/15 18:20:21 mmo Exp $
+
+/**
+ * Implementation of hook_install().
+ */
+function sunstar_aff_pubnews_install() {
+	// no installation activity
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function sunstar_aff_pubnews_uninstall() {
+	// no uninstall activity
+}

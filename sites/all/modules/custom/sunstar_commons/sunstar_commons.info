@@ -1,0 +1,6 @@
+; $Id: sunstar_commons.module,v 1.0 2015/04/17 11:47:37 mmo Exp $
+name = Sun.Star - Common modules
+description = Required to run some functions and variables used in template.
+package = Sun.Star
+version = "1.0x"
+core = 7.x

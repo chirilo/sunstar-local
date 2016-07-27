@@ -1,0 +1,13 @@
+name = Slick development
+description = "Provides Slick development, the last carousel development."
+core = 7.x
+package = Slick
+
+dependencies[] = slick
+
+; Information added by Drupal.org packaging script on 2015-09-10
+version = "7.x-2.0-beta3+1-dev"
+core = "7.x"
+project = "slick_extras"
+datestamp = "1441907053"
+

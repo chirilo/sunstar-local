@@ -1,0 +1,7 @@
+; $Id$
+name = Lotto
+description = Retrieves public Lotto Results from www.pcso.gov.ph.
+core = 7.x
+package = Sun.Star
+
+version = "1.5"

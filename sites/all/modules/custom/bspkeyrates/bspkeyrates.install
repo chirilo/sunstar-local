@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the bspkeyrates module.
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function bspkeyrates_install() {
+  // Create tables.
+//  drupal_install_schema('bspkeyrates');
+  drupal_install_schema('bspexchange');
+
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function bspkeyrates_uninstall() {
+//  drupal_uninstall_schema('bspkeyrates');
+  drupal_uninstall_schema('bspexchange');
+
+  variable_del('bspkeyrates_source_url');
+  variable_del('bspkeyrates_checked');
+  variable_del('bspkeyrates_last_update');
+  variable_del('bspkeyrates_datetime');
+  variable_del('bspkeyrates_phil_peso');
+}
+/**
+ * Implementation of hook_schema().
+ */
+function bspkeyrates_schema() {
+// bsp_country, bsp_unit, bsp_symbol, bsp_us_dollar, bsp_phil_peso
+  $schema['bspexchange'] = array(
+    'description' => 'BSP Exchange rate bulletin',
+    'fields' => array(
+      'bid'  => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: BID.',
+      ),
+      'bsp_country' => array(
+        'type' => 'varchar',
+        'length' => 60,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Country.',
+      ),
+      'bsp_unit' => array(
+        'type' => 'varchar',
+        'length' => 30,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Unit.',
+      ),
+      'bsp_symbol' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'symbol.',
+      ),
+      'bsp_us_dollar' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'US Dollar.',
+      ),
+      'bsp_phil_peso' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Phil Peso.',
+      ),
+
+    ),
+    'primary key' => array('bid'),
+  );
+
+  return $schema;
+}
+

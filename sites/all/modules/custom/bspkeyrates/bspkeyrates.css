@@ -1,0 +1,29 @@
+#bspkeyrates-feature {
+	width:135px;
+	height:50px;
+  border:0px solid #000099;
+  margin: -5px 0px 10px 2px;
+	float: left;
+  text-align: center;
+  background: url('forex.jpg') top left no-repeat;
+}
+
+#bspkeyrates-feature a.rate {
+  font-family: arial narrow, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	color:red;
+}
+
+#bspkeyrates-rate {
+  margin-top:13px;
+  font-family: arial narrow, sans-serif;
+  font-size:15px;
+  font-weight:bold;
+  color:red;
+}
+
+#bspkeyrates-lastupdate {
+	font-size:11px;
+	color:#000099;
+}

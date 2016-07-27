@@ -1,0 +1,6 @@
+; $Id: sunstar_aff_pubnews.info,v 2.0 2015/04/15 18:20:21 mmo Exp $
+name = Sun.Star - Affiliate Publication 
+description = Output publication date on the selected affiliate with newspaper.
+package = Sun.Star
+version = "2.0x"
+core = 7.x

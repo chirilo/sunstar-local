@@ -1,0 +1,6 @@
+name = Pagasa
+description = Retrieves public weather forecast from pagasa.dost.gov.ph.
+core = 7.x
+package = Sun.Star
+
+version = "0.5"

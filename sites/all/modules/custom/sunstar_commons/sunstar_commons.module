@@ -1,0 +1,37 @@
+<?php
+// $Id: sunstar_commons.module,v 1.0 2015/04/17 11:47:37 mmo Exp $
+/**************************************************************************************************************************************************************************
+ * Description 		: Sunstar common module, all the common modules called in the templates.
+ * Author 			: Michael M. Ocana
+ * on               : April 2015
+ * email 			: me@michaelocana.com
+ */
+
+
+require_once('sunstar_commons.inc');
+
+/**
+* Display help and module information
+* @param section which section of the site we're displaying help
+* @return help text for section
+*/
+function sunstar_commons_help($section='') {
+
+  $output = '';
+
+  switch ($section) {
+    case "admin/help#sunstar_commons":
+      $output = '<p>' . t("Sunstar common module, all the common modules called in the templates.") . '</p>';
+      break;
+  }
+
+  return $output;
+} 
+
+/**
+ * Implementation of hook_perm().
+ */
+function sunstar_commons_perm() {
+  return array('access sunstar_aff_pubnews');
+}
+

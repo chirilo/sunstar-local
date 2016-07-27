@@ -1,0 +1,70 @@
+<?php
+// $Id$
+/**************************************************************************************************************************************************************************
+ * Description 		: Sunstar affiliates module will determine if the Location with newspaper.
+ * Author 			: Michael M. Ocana
+ * on 				: August 2010
+ * revision         : April 2015 (for Drupal 7)
+ * email 			: me@michaelocana.com
+ */
+global $moduleName;
+$moduleName = "sunstar_aff_pubnews";
+
+global $content_types;
+$content_types = array();
+$content_types[] = "'Location'";
+$content_types[] = "'Lokasyon'";
+
+global $contents_to_check;
+$contents_to_check = array("article", "superbalita");
+
+global $bisayan_months;
+$bisayan_months = array("Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Septembre", "Oktubre", "Nobyembre", "Disyembre");
+
+
+require_once('sunstar_aff_pubnews.inc');
+
+/**
+* Display help and module information
+* @param section which section of the site we're displaying help
+* @return help text for section
+*/
+function sunstar_aff_pubnews_help($section='') {
+
+  $output = '';
+
+  switch ($section) {
+    case "admin/help#sunstar_aff_pubnews":
+      $output = '<p>' . t("Sunstar affiliates module will determine if the Location with newspaper. To add settings please goto admin/structure/sunstar_aff_pubnews") . '</p>';
+      break;
+  }
+
+  return $output;
+} 
+
+
+/**
+ * Implementation of hook_menu().
+ */
+function sunstar_aff_pubnews_menu() {
+  $items = array();
+
+  $items['admin/structure/sunstar_aff_pubnews'] = array(
+    'title' => t('Sunstar affiliates checklist'),
+    'description' => t('Sunstar affiliates checklist'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sunstar_aff_pubnews_admin_settings'),
+    'access arguments' => array('administer sunstar_aff_pubnews')
+  );
+  
+  return $items;
+
+}
+
+/**
+ * Implementation of hook_perm().
+ */
+function sunstar_aff_pubnews_perm() {
+  return array('access sunstar_aff_pubnews', 'administer sunstar_aff_pubnews');
+}
+
